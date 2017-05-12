@@ -15,6 +15,11 @@ Article.prototype.toHtml = function() {
   // TODO: Use handlebars to render your articles.
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
+  var template = $('#article-template').html();
+
+  var templateRender = Handlebars.compile(template);
+
+
 
   var template = $('#article-template').html();
   var templateRender = Handlebars.compile(template);
@@ -30,7 +35,6 @@ Article.prototype.toHtml = function() {
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
 
   return templateRender(this);
-
 };
 
 rawData.sort(function(a,b) {
